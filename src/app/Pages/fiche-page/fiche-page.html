@@ -1,0 +1,35 @@
+<div class="page-container">
+  <h1>Voici tous nos artisans</h1>
+  <!-- Bloc catégorie -->
+  <section class="category-container">
+    @for (categoryGroup of CategoryArtisans; track categoryGroup.category) {
+    <div class="category-block">
+      <h3 class="category-title" id="{{categoryGroup.category}}">
+        {{ categoryGroup.category }} :
+      </h3>
+      <!-- Bloc card  -->
+      <div class="cards-grid">
+        @for (artisan of categoryGroup.artisans; track artisan.id) {
+        <div class="card" style="width: 16rem">
+          <div class="card-body">
+            <h5 class="card-title">{{ artisan.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">
+              {{ artisan.specialty }}
+            </h6>
+            <p class="card-text">{{ artisan.about }}</p>
+            <p class="card-text">{{ artisan.location }}</p>
+            <p class="card-text">
+              {{artisan.note}}
+              <span class="star-note"> {{ artisan.note | starRating }}</span>
+            </p>
+            <a (click)="goToArtisanPage(artisan.id)" class="card-link"
+              >Voir Plus</a
+            >
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    }
+  </section>
+</div>

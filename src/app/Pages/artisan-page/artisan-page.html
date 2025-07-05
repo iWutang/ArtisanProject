@@ -1,0 +1,59 @@
+<section class="artisan-container">
+  <h1 class="artisanPage-title">Contactez cette Artisan ?</h1>
+  <!-- /*La fiche de l'artisan */ -->
+  @if (artisan.id) {
+  <div class="card">
+    <div class="card-body" style="max-width: 36rem">
+      <h3 class="card-title">{{artisan.name}}</h3>
+      <h4 class="card-subtitle" mb-2 text-body-secondary>
+        {{artisan.specialty}}
+      </h4>
+      <p class="card-text">{{artisan.about}}</p>
+      <p class="card-text">{{artisan.location}}</p>
+      <p class="card-text">
+        {{artisan.note}}
+        <span class="star-note">{{ artisan.note | starRating}}</span>
+      </p>
+      <a href="" class="card-link d-block ms-0">{{ artisan.email}}</a>
+      <a href="" class="card-link d-block ms-0">{{ artisan.website}}</a>
+      <button class="artisan-contactbtn" (click)="openModal()">
+        Contactez
+      </button>
+    </div>
+  </div>
+  } @if (showModal) {
+  <div class="modal-backdrop" (click)="closeModal()"></div>
+  <div class="modal-custom">
+    <div class="modal-custom-content">
+      <h2>Contacter {{artisan.name}}</h2>
+      <!-- Formulaire de contact -->
+      <form (ngSubmit)="sendContact()" #contactForm="ngForm">
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="name"
+          placeholder="Votre nom"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="Votre email"
+          required
+        />
+        <textarea
+          name="message"
+          [(ngModel)]="message"
+          placeholder="Votre message"
+          required
+          cols="3"
+        ></textarea>
+
+        <button type="submit" [disabled]="!contactForm.valid">Envoyer</button>
+        <button type="button" (click)="closeModal()">Annuler</button>
+      </form>
+    </div>
+  </div>
+  }
+</section>

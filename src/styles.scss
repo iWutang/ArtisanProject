@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  --font: "Rubik";
+  --bg-color: #f1f8fc;
+  --lightb-color: #0074c7;
+  --blue-color: #00497c;
+  --darkb-color: #384050;
+  --red-color: #cd2c2e;
+  --green-color: #82b864;
+}
+
+.rubik-uniquifier {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+app-root {
+  display: block;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: var(--bg-color);
+  font-family: var(--font);
+}
+
+.footer {
+  position: bottom;
+  bottom: 0;
+  width: 100%;
+  background: var(--darkb-color);
+}
+
+router-outlet {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  // padding-top: 75px;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.star-note {
+  color: gold;
+  font-size: 1.4rem;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--darkb-color);
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000;
+  width: 15px;
+}
+
+/* RESPONSIVE */

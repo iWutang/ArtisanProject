@@ -1,0 +1,29 @@
+@if (displayModal && ArtisanFiltres) {
+<div class="modal">
+  <div class="modal-content">
+    <button (click)="NoDisplayModal()" class="modal-btn">X</button>
+    <h2>{{ motSearch }}</h2>
+    <ul style="padding: 0">
+      @for (artisan of ArtisanFiltres; track artisan.name) {
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ artisan.name}}</h5>
+          <h6 class="card-subtitle">{{ artisan.specialty}}</h6>
+          <div class="card-text">{{ artisan.location}}</div>
+          <div class="card-text">
+            {{ artisan.note}}
+            <span class="star-note"> {{ artisan.note | starRating}} </span>
+          </div>
+          <a
+            (click)="goToArtisanPage(artisan.id)"
+            class="card-link"
+            style="cursor: pointer"
+            >Voir plus
+          </a>
+        </div>
+      </div>
+      }
+    </ul>
+  </div>
+</div>
+}

@@ -1,0 +1,18 @@
+.contact-container {
+  text-align: center;
+  margin: 5em;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.contact-title {
+  padding: 1.5em 1.5em;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  padding-bottom: 2em;
+}

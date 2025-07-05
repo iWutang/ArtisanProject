@@ -1,0 +1,70 @@
+.page-container {
+  padding: 2em;
+}
+
+.page-container h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5em 0;
+  position: relative;
+}
+
+.page-container h1::after {
+  content: "";
+  position: absolute;
+  transform: translateY(50px);
+  margin: 0 auto;
+  height: 4px;
+  width: 30%;
+  background-color: var(--lightb-color);
+  border-radius: 8px;
+}
+
+.category-title {
+  text-align: left;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 cartes par ligne */
+  gap: 1.5em;
+  justify-content: center; /* centre la grille horizontalement */
+  margin-bottom: 2rem; /* espace entre les groupes */
+}
+
+.card-link {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--lightb-color), var(--blue-color));
+  color: var(--bg-color);
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, var(--blue-color), var(--lightb-color));
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 500px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 16rem); /* 2 cartes par ligne */
+  }
+}
+
+@media (min-width: 990px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 20rem);
+  }
+
+  .category-title {
+    margin-left: 8em;
+  }
+}

@@ -1,0 +1,106 @@
+.home-container {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-container .img-container {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+  height: 10em;
+}
+
+.home-container .img-container::after {
+  content: "";
+  position: absolute;
+  transform: translateY(8em);
+  margin: 0 auto;
+  height: 4px;
+  width: 30%;
+  background-color: var(--lightb-color);
+  border-radius: 8px;
+}
+
+.home-container .home-title2 {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5em;
+}
+
+.home-container .home-italic {
+  font-size: 12px;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+}
+
+.pres .home-tuto {
+  margin: 0 0.5em;
+}
+
+.home-tuto li {
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+
+.topMonth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.topMonth-title {
+  margin: 1em 0;
+  padding: 0.5em;
+  border-bottom: 3px solid var(--lightb-color);
+}
+
+.topMonth .card-container {
+  margin: 10px 0;
+  gap: 1.5em;
+}
+
+.card-container .card {
+  margin: 2em 0;
+}
+
+.star-note {
+  color: gold;
+  font-size: 1.2em;
+}
+
+// RESPONSIVE
+
+@media (min-width: 500px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 16rem);
+  }
+
+  .home-container .img-container {
+    height: 20em;
+  }
+
+  .home-container .img-container::after {
+    transform: translateY(16em);
+  }
+}
+
+@media (min-width: 990px) {
+  .card-container {
+    grid-template-columns: repeat(3, 20rem);
+  }
+
+  .home-container .img-container {
+    height: 20em;
+  }
+
+  .home-container .img-container::after {
+    transform: translateY(16em);
+  }
+}

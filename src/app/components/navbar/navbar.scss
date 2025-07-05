@@ -1,0 +1,136 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 25px;
+  box-shadow: inset 0px -1px 0px var(--blue-color);
+  z-index: 1000;
+  background: var(--lightb-color);
+}
+
+.nav-icon img {
+  background: var(--bg-color);
+  border: none;
+  border-radius: 10px;
+  max-height: 32px;
+}
+
+.search-bar {
+  flex: 1;
+  padding: 0.5em;
+  padding-left: 1em;
+  border-radius: 20px;
+  background-color: var(--bg-color);
+  outline: none;
+}
+
+.menu-burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-burger span {
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Liens cachés par déf*/
+
+.navlinks-container {
+  display: none;
+  flex-direction: column;
+  background: var(--lightb-color);
+  position: absolute;
+  top: 70px; /* ajuster selon hauteur de la navbar */
+  right: 0rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+.navlinks-container a {
+  font-size: 18px;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  color: var(--bg-color);
+}
+
+/* if open  */
+
+.navlinks-container.active {
+  display: flex;
+}
+
+/* Responsive */
+
+@media (min-width: 500px) {
+  .navbar {
+    justify-content: space-around;
+  }
+
+  .search-bar {
+    width: 300px;
+  }
+
+  .navlinks-container {
+    right: 0rem;
+  }
+}
+
+@media (min-width: 990px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .main-navlinks {
+    display: flex;
+    align-items: center;
+  }
+
+  .navlinks-container {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    gap: 1.5em;
+  }
+
+  .search-bar {
+    width: 400px;
+  }
+
+  .navlinks-container a {
+    padding: 0;
+    margin: 0 0.5em;
+    display: inline-block;
+    position: relative;
+  }
+
+  .navlinks-container a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: var(--bg-color);
+    transition: transform 0.3s ease-out;
+  }
+
+  .navlinks-container a:hover::after {
+    transform: scaleX(1);
+  }
+  .menu-burger {
+    display: none;
+  }
+}

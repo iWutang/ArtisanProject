@@ -1,0 +1,86 @@
+.artisan-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6em 1em;
+}
+
+.artisan-container .artisanPage-title {
+  margin-bottom: 2em;
+}
+
+.card .artisan-contactbtn {
+  margin: 1em 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: var(--blue-color);
+  color: var(--bg-color);
+}
+
+.star-note {
+  color: gold;
+  font-size: 1.4em;
+}
+
+/* Modal Styles*/
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+.modal-custom {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--lightb-color);
+  z-index: 1000;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.modal-custom .modal-custom-content {
+  background: var(--bg-color);
+  color: black;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 1000 !important;
+}
+
+.modal-custom input,
+.modal-custom textarea {
+  width: 100%;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 0.5em;
+}
+
+.modal-custom textarea {
+  height: 5em;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 500px) {
+  .modal-custom {
+    max-width: 600px;
+    height: 50%;
+  }
+}
+@media (min-width: 990px) {
+  .modal-custom {
+    max-width: 900px;
+    height: 50%;
+  }
+}

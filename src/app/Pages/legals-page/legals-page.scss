@@ -1,0 +1,27 @@
+.legals-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5em 4em;
+}
+
+.legals-container .legals-title {
+  margin-bottom: 1.5em;
+}
+
+.legals-container .accordion {
+  min-width: 280px;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 500px) {
+  .legals-container .accordion {
+    min-width: 600px;
+  }
+}
+@media (min-width: 990px) {
+  .legals-container .accordion {
+    min-width: 800px;
+  }
+}

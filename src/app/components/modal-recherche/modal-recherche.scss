@@ -1,0 +1,76 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  overflow-y: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: none;
+  max-width: 90%;
+  max-height: 90%;
+  scrollbar-width: none;
+}
+
+/* Masquer la scrollbar vieux navigateur */
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-btn {
+  font-weight: bold;
+  max-width: 40px;
+  padding: 5px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.modal-content .card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.card-link {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--lightb-color), var(--blue-color));
+  color: var(--bg-color);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 500px) {
+}
+@media (min-width: 990px) {
+  .modal-btn {
+    background: var(--green-color);
+  }
+
+  .modal-btn:hover {
+    background: var(--red-color);
+  }
+
+  .card-link:hover {
+    transform: translateY(-6px);
+    background: linear-gradient(135deg, var(--blue-color), var(--lightb-color));
+  }
+}

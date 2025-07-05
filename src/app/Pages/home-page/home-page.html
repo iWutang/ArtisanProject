@@ -1,0 +1,57 @@
+<div class="home-container">
+  <div class="img-container">
+    <img src="Logo.png" alt="Logo" class="home-logo" />
+  </div>
+  <section class="pres">
+    <h2 class="home-title2">Comment trouver mon artisan ?</h2>
+    <p class="home-italic">(En seulement 4 étapes, facile non?)</p>
+    <ol class="home-tuto">
+      <li>Choisissez une catégorie :</li>
+      <p class="step-details">
+        Utilisez le menu pour sélectionner le type d'artisanat qui vous
+        intéresse : plomberie,menuiserie,boulanger,électricité, etc.
+      </p>
+      <li>Trouvez votre artisan :</li>
+      <p class="step-details">
+        Parcourez les profils disponibles dans la catégorie choisie. Consultez
+        leurs fiches et choissiez.
+      </p>
+      <li>Contactez-le facilement :</li>
+      <p class="step-details">
+        Remplissez le formulaire de contact présent sur sa fiche. Décrivez votre
+        besoin, votre projet ou posez vos questions.
+      </p>
+      <li>Recevez une réponse rapide :</li>
+      <p class="step-details">
+        L'artisan vous répondra sous 48 heures maximum. Simple, rapide et
+        efficace !
+      </p>
+    </ol>
+  </section>
+  <section class="topMonth">
+    <h3 class="topMonth-title">⭐ Les Artisans du mois ⭐</h3>
+    <div class="card-container">
+      <!-- Les 3 cards d'artisan -->
+      @for (artisan of topArtisans; track $index) {
+      <div class="card" style="width: 16rem">
+        <div class="card-body">
+          <h5 class="card-title">{{ artisan.name}}</h5>
+          <p class="card-text">{{ artisan.about}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{artisan.specialty}}</li>
+          <li class="list-group-item">
+            {{artisan.note}}
+            <span class="star-note">{{ artisan.note | starRating}}</span>
+          </li>
+          <li class="list-group-item">{{artisan.location}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link d-block ms-0">{{artisan.email}}</a>
+          <a href="#" class="card-link d-block ms-0">{{artisan.website}}</a>
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+</div>

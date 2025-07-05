@@ -1,0 +1,41 @@
+<nav class="navbar">
+  <a href="" class="nav-icon">
+    <img src="Logo.png" alt="Logo" />
+  </a>
+  <div class="search-container">
+    <input
+      type="text"
+      class="search-bar"
+      placeholder="Rechercher par catégorie/ville"
+      [(ngModel)]="searchTerm"
+      (keyup.enter)="onSearchInput()"
+    />
+  </div>
+  <div class="main-navlinks">
+    <button
+      class="menu-burger"
+      type="button"
+      aria-label="toggleNav"
+      [attr.aria-expanded]="isMenuOpen"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="navlinks-container" [class.active]="isMenuOpen">
+      <a [routerLink]="['fiche']" fragment="Bâtiment" (click)="closeMenu()">
+        Bâtiment
+      </a>
+      <a [routerLink]="['fiche']" fragment="Fabrication" (click)="closeMenu()"
+        >Fabrication
+      </a>
+      <a [routerLink]="['fiche']" fragment="Services" (click)="closeMenu()"
+        >Services
+      </a>
+      <a [routerLink]="['fiche']" fragment="Alimentation" (click)="closeMenu()"
+        >Alimentation
+      </a>
+    </div>
+  </div>
+</nav>
