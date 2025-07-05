@@ -56,9 +56,6 @@ export class ModalRecherche implements OnInit, OnChanges {
           this.motSearch = `Aucun Artisan trouvé`;
           this.displayModal = false;
         }
-        console.log('Recherche :', cle);
-        console.log('Résultats filtrés :', this.ArtisanFiltres);
-        console.log('Titre affiché :', this.motSearch);
       });
     });
   }
